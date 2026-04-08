@@ -1,0 +1,61 @@
+{
+  "name": "@mattfletcher94/ui",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattfletcher94/ui.git",
+    "directory": "packages/ui"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist",
+    "src/theme.css"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    "./*": {
+      "types": "./dist/components/*/index.d.ts",
+      "import": "./dist/components/*/index.js"
+    },
+    "./theme.css": "./src/theme.css",
+    "./lib/utils": {
+      "types": "./dist/lib/utils.d.ts",
+      "import": "./dist/lib/utils.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "check:circular": "npx dpdm -T --no-warning --exit-code circular:1 ./src/components/*/index.ts"
+  },
+  "dependencies": {
+    "@internationalized/date": "3.12.0",
+    "@tanstack/vue-table": "8.21.3",
+    "@vueuse/core": "14.2.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-vue-next": "1.0.0",
+    "reka-ui": "2.9.0",
+    "tailwind-merge": "3.5.0",
+    "tw-animate-css": "1.4.0",
+    "vaul-vue": "0.4.1",
+    "vue-input-otp": "0.3.2",
+    "vue-sonner": "2.0.9",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "6.0.5",
+    "typescript": "6.0.2",
+    "vite": "8.0.3",
+    "vite-plugin-dts": "4.5.4",
+    "vue": "3.5.31"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4.0.0",
+    "vue": "^3.5.0"
+  }
+}

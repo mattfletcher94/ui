@@ -1,0 +1,19 @@
+{
+  "name": "ui-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -F @mattfletcher94/ui build",
+    "check": "pnpm -F @mattfletcher94/ui check:circular",
+    "lint": "oxlint --fix --fix-dangerously",
+    "format": "oxfmt --write ."
+  },
+  "devDependencies": {
+    "@vue/tsconfig": "0.9.1",
+    "oxfmt": "0.42.0",
+    "oxlint": "1.57.0",
+    "typescript": "6.0.2"
+  },
+  "packageManager": "pnpm@9.15.2"
+}
